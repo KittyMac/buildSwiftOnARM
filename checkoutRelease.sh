@@ -1,13 +1,12 @@
 #!/bin/bash
 . "$(dirname $0)/utils.sh"
 
-BRANCH=release/5.4
-TAG=swift-5.4-RELEASE
+SCHEME=release/5.4
 
 echo "♻️  Resetting the repositories..."
 find . -maxdepth 1 -type d \( ! -name . \) -exec bash -c "[ -d '{}'/.git ] && echo ■ Cleaning '{}' && cd '{}' && git reset --hard HEAD && git clean -fd" \;
-echo "✳️  Switching all the repositories to ${BRANCH} @ ${TAG}..."
-./swift/utils/update-checkout --scheme ${BRANCH} --tag ${TAG}
+echo "✳️  Switching all the repositories to ${SCHEME}..."
+./swift/utils/update-checkout --clone --scheme "$SCHEME"
 echo "✅ Applying the required cross-platform patches..."
 find . -maxdepth 1 -type d \( ! -name . \) -exec bash -c "[ -d '{}'.diffs ] && echo ■ Applying patches to '{}' && cd '{}'  && for f in ../'{}'.diffs/*.diff; do [ -e \"\$f\" ] || continue; patch -d ../ -p1 < \"\$f\"; done;" \;
 
