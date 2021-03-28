@@ -5,7 +5,9 @@ REL=5.4
 INSTALL_DIR=`pwd`/install
 PACKAGE=`pwd`/swift-${REL}_${ARCH}.tgz
 
-./swift/utils/build-script -j=5 --preset=buildbot_linux_1804,notest install_destdir=/root/swift-source/install installable_package=/root/swift-source/install/swift-$REL-armv7-RELEASE-Ubuntu-18.04.tar.gz
+#./swift/utils/build-script -j=5 --preset=buildbot_linux,swiftlang-min install_destdir=/root/buildSwiftOnARM/install installable_package=/root/buildSwiftOnARM/install/swift-$REL-armv7-RELEASE-Ubuntu-18.04.tar.gz
+
+./swift/utils/build-script -j=5 --preset=buildbot_linux install_destdir=/root/buildSwiftOnARM/install installable_package=/root/buildSwiftOnARM/install/swift-$REL-armv7-RELEASE-Ubuntu-18.04.tar.gz
 
 #./swift/utils/build-script \
 #    -R \
