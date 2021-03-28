@@ -1,7 +1,7 @@
 diff --git a/stdlib/public/runtime/Metadata.cpp b/stdlib/public/runtime/Metadata.cpp
 index 2e466715ffd..f6685108742 100644
---- a/stdlib/public/runtime/Metadata.cpp
-+++ b/stdlib/public/runtime/Metadata.cpp
+--- a/swift/stdlib/public/runtime/Metadata.cpp
++++ b/swift/stdlib/public/runtime/Metadata.cpp
 @@ -757,7 +757,7 @@ MetadataResponse swift::swift_getCanonicalSpecializedMetadata(
    if (auto *token =
            description

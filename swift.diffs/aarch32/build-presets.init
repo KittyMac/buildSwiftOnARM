@@ -1,7 +1,7 @@
 diff --git a/utils/build-presets.ini b/utils/build-presets.ini
 index 5d5b45c6413..d92036d59c1 100644
---- a/utils/build-presets.ini
-+++ b/utils/build-presets.ini
+--- a/swift/utils/build-presets.ini
++++ b/swift/utils/build-presets.ini
 @@ -917,6 +917,42 @@ mixin-preset=buildbot_linux_crosscompile_android,tools=RA,stdlib=RD,build
  
  android-arch=aarch64
