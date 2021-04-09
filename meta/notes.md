@@ -14,7 +14,7 @@ sudo fallocate -l 6G swapfile && sudo chmod 600 swapfile && sudo mkswap swapfile
 1. Follow steps on swift-arm64
 
 ```
-sudo apt-get -q install -y git cmake ninja-build clang python python3.8 uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev systemtap-sdt-dev tzdata rsync python-six
+sudo apt-get -q install -y git cmake ninja-build clang python python3.8 uuid-dev libicu-dev icu-devtools libbsd-dev libedit-dev libxml2-dev libsqlite3-dev swig libpython-dev libncurses5-dev pkg-config libblocksruntime-dev libcurl4-openssl-dev systemtap-sdt-dev tzdata rsync python-six python3-dev python3-pip python3-tk python3-lxml python3-six
 
 # for Swift 5.4 only
 sudo apt-get install python3-dev python3-pip python3-tk python3-lxml python3-six
@@ -52,17 +52,25 @@ mkdir swift-source && cd swift-source && git clone https://github.com/apple/swif
 
 ```
 # install from tarball
-# https://gigmuster.medium.com/install-swift-5-0-on-ubuntu-18-04-86f6b96654
 
-tar xzf swift-5.0-RELEASE/swift-5.0-RELEASE-ubuntu18.04.tar.gz
-sudo mv swift-5.0-RELEASE-ubuntu18.04 /usr/share/swift
-echo "export PATH=/usr/share/swift/usr/bin:$PATH" >> ~/.bashrc
+tar -xvzf swift-5.4-armv7-RELEASE-Ubuntu-18.04.tar.gz -C ~/swift
+
+
 ```
 
 ```
 # path to install
 
-export PATH="~/swift/FILE/usr/bin:$PATH"
+export PATH="/root/buildSwiftOnARM/install/usr/bin:$PATH"
+
+export PATH="/root/swift/usr/bin:$PATH"
+
+```
+
+```
+# if gdb ends with sigill in libcrypto, this is normal suppress it
+(gdb) handle SIGILL nostop noprint
+
 
 ```
 
@@ -99,6 +107,7 @@ libdispatch
 libicu
 
 install-swift
+install-swiftpm
 install-foundation
 install-libdispatch
 install-libicu
@@ -106,4 +115,17 @@ reconfigure
 #===------------------------------------------------------------------------===#
 # End
 #===------------------------------------------------------------------------===#
+```
+
+
+```
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wimplicit-int-float-conversion"
+#pragma GCC diagnostic ignored "-Wimplicit-const-int-float-conversion"
+
+
+#pragma GCC diagnostic pop
+
+
 ```
