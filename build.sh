@@ -1,11 +1,11 @@
 #!/bin/bash
 . "$(dirname $0)/utils.sh"
 
-REL=5.4
+REL=5.3
 INSTALL_DIR=`pwd`/install
 PACKAGE=`pwd`/swift-${REL}_${ARCH}.tgz
 
-time ./swift/utils/build-script -j=6 --preset=buildbot_linux,swiftlang-min install_destdir=/root/buildSwiftOnARM/install installable_package=/root/buildSwiftOnARM/install/swift-$REL-armv7-RELEASE-Ubuntu-18.04.tar.gz
+time ./swift/utils/build-script -j=5 --preset=buildbot_linux,swiftlang-min install_destdir=/root/buildSwiftOnARM/install installable_package=/root/buildSwiftOnARM/install/swift-$REL-armv7-RELEASE-Ubuntu-18.04.tar.gz
 
 #./swift/utils/build-script -j=5 --preset=buildbot_linux install_destdir=/root/buildSwiftOnARM/install installable_package=/root/buildSwiftOnARM/install/swift-$REL-armv7-RELEASE-Ubuntu-18.04.tar.gz
 
