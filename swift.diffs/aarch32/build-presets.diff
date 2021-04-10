@@ -1,8 +1,8 @@
 diff --git a/utils/build-presets.ini b/utils/build-presets.ini
-index 5d5b45c6413..18c1ac83034 100644
---- a/swift/utils/build-presets.ini
-+++ b/swift/utils/build-presets.ini
-@@ -917,6 +917,51 @@ mixin-preset=buildbot_linux_crosscompile_android,tools=RA,stdlib=RD,build
+index e777df73b95..2f173b29ec2 100644
+--- a/utils/build-presets.ini
++++ b/utils/build-presets.ini
+@@ -924,6 +924,49 @@ dash-dash
  
  android-arch=aarch64
  
@@ -19,8 +19,6 @@ index 5d5b45c6413..18c1ac83034 100644
 +
 +build-ninja
 +release
-+
-+debug-swift-stdlib
 +
 +install-prefix=/usr
 +build-subdir=buildbot_linux
