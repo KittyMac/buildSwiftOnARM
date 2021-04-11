@@ -1,7 +1,7 @@
 diff --git a/utils/build-presets.ini b/utils/build-presets.ini
 index e777df73b95..2f173b29ec2 100644
---- a/utils/build-presets.ini
-+++ b/utils/build-presets.ini
+--- a/swift/utils/build-presets.ini
++++ b/swift/utils/build-presets.ini
 @@ -924,6 +924,49 @@ dash-dash
  
  android-arch=aarch64
