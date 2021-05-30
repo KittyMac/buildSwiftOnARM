@@ -55,6 +55,9 @@ mkdir swift-source && cd swift-source && git clone https://github.com/apple/swif
 
 tar -xvzf swift-5.4-armv7-RELEASE-Ubuntu-18.04.tar.gz -C ~/swift
 
+# make tarball
+tar -czvf swiftslim-5.4-armv7-RELEASE-Ubuntu-18.04.tar.gz ./usr
+
 
 ```
 
