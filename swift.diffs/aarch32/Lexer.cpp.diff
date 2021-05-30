@@ -1,0 +1,13 @@
+diff --git a/lib/Parse/Lexer.cpp b/lib/Parse/Lexer.cpp
+index bdbd44e72fe..5d88e328b48 100644
+--- a/swift/lib/Parse/Lexer.cpp
++++ b/swift/lib/Parse/Lexer.cpp
+@@ -2868,7 +2868,7 @@ ParsedTrivia TriviaLexer::lexTrivia(StringRef TriviaStr) {
+     signed char CurChar = (signed char)*CurPtr;
+     CurPtr++;
+ 
+-    switch (CurChar) {
++    switch ((unsigned char)CurChar) {
+     case '\n':
+       Pieces.appendOrSquash(TriviaKind::Newline, 1);
+       continue;
