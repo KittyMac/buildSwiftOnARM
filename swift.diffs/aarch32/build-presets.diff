@@ -20,7 +20,7 @@ index 5d5b45c6413..18c1ac83034 100644
 +build-ninja
 +release
 +
-+debug-swift-stdlib
++
 +
 +install-prefix=/usr
 +build-subdir=buildbot_linux
