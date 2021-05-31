@@ -1,0 +1,13 @@
+diff --git a/llvm/lib/CodeGen/SelectionDAG/SelectionDAGBuilder.cpp b/llvm/lib/CodeGen/SelectionDAG/SelectionDAGBuilder.cpp
+index 43e5653ec534..24a05cf7aef9 100644
+--- a/llvm-project/llvm/lib/CodeGen/SelectionDAG/SelectionDAGBuilder.cpp
++++ b/llvm-project/llvm/lib/CodeGen/SelectionDAG/SelectionDAGBuilder.cpp
+@@ -5515,7 +5515,7 @@ bool SelectionDAGBuilder::EmitFuncArgumentDbgValue(
+           DAG.AddDbgValue(SDV, nullptr, false);
+           continue;
+         }
+-        assert(!IsDbgDeclare && "DbgDeclare operand is not in memory?");
++        //assert(!IsDbgDeclare && "DbgDeclare operand is not in memory?");
+         FuncInfo.ArgDbgValues.push_back(
+           BuildMI(MF, DL, TII->get(TargetOpcode::DBG_VALUE), IsDbgDeclare,
+                   RegAndSize.first, Variable, *FragmentExpr));
